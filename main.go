@@ -4,16 +4,17 @@ import "fmt"
 
 func main() {
 
-	var (
-		x int
-		y string
-		z bool
-	)
 
-	x = 15
-	y = "Franck"
-	z = true
+day := "mardi"
+
+switch day {
+case "lundi":
+    fmt.Println("Début de semaine")
+case "vendredi":
+    fmt.Println("Presque le week-end")
+default:
+    fmt.Println("Jour ordinaire")
+}
 
 
-	fmt.Printf("\n Bonjour à tous je suis %v, j'ai %v et j'ai plus de 18 ans et c'est %v", y, x, z)
 }
