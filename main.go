@@ -5,16 +5,18 @@ import "fmt"
 func main() {
 
 
-day := "mardi"
-
-switch day {
-case "lundi":
-    fmt.Println("Début de semaine")
-case "vendredi":
-    fmt.Println("Presque le week-end")
-default:
-    fmt.Println("Jour ordinaire")
+for i := 0; i < 10; i++ {
+    if i == 5 {
+		fmt.Println("ignore 5")
+        continue // ignore 5
+		
+    }
+    if i == 8 {
+        break // sort de la boucle
+    }
+    fmt.Println(i)
 }
+
 
 
 }
