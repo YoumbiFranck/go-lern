@@ -1,0 +1,18 @@
+# Ignorer les fichiers inutiles pour le container
+.git
+.gitignore
+README.md
+*.md
+
+# Binaires compilés
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Fichiers de test
+*.test
+*.out
+
+# Dossiers de dépendances
+vendor/

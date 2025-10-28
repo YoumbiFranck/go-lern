@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  golang-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: go-learning
+    volumes:
+      # Monte le répertoire courant dans le container pour le développement en direct
+      - .:/app
+      # Cache pour les modules Go (améliore les performances)
+      - go-modules:/go/pkg/mod
+    working_dir: /app
+    # Mode interactif pour pouvoir utiliser le container
+    stdin_open: true
+    tty: true
+    # Commande par défaut : garde le container actif
+    # Option 1: Garde le container en vie pour exécuter des commandes
+    command: tail -f /dev/null
+    # Option 2: Décommentez la ligne ci-dessous pour exécuter main.go automatiquement
+    # command: sh -c "go run main.go && tail -f /dev/null"
+    # Variables d'environnement utiles
+    environment:
+      - CGO_ENABLED=0
+      - GOOS=linux
+
+volumes:
+  go-modules:
